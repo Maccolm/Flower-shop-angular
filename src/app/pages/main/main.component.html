@@ -1,2 +1,19 @@
-<p>main works!</p>
-<img src = "/img/icons/custom-icon-1.png" alt="img">
+<div class="container__about xl mx-auto flex items-center justify-center flex-wrap gap-5 md:gap-20">
+	@for(item of aboutObj; track item) {
+		<div class="about__item max-w-md lg:max-w-80 p-1 w-full">
+			<div class="item__icon mb-5 flex justify-self-center">
+				<img [src]="item.imgPath" alt="icon">
+			</div>
+			<div class="item__title mb-5">
+				<h2 class="text-center"z>
+					{{ item.title }}
+				</h2>
+			</div>
+			<div class="item__text">
+				<p class="text-center">
+					{{ item.text }}
+				</p>
+			</div>
+		</div>
+	}
+</div>

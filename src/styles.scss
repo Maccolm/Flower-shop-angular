@@ -10,3 +10,21 @@
  *{
 	font-family: "Open Sans", sans-serif;
  }
+ h1,h2,h3,h4,h5,h6 {
+	color: #1b1b1b;
+	font-family: Lora, sans-serif;
+	font-weight: 400;
+	text-transform: uppercase;
+ }
+ p {
+	color: #7777;
+ }
+ .white {
+	color: #fff;
+ }
+ .wrapper {
+	padding: 0 15px;
+	@media screen and (max-width: 768) {
+		padding: 0 10px;
+	}
+ }
