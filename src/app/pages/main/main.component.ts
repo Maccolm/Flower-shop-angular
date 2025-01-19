@@ -1,14 +1,26 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ParallaxComponent } from '../../components/parallax/parallax.component';
+import { ColumnComponent } from '../../components/column/column.component';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ParallaxComponent, ColumnComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
 export class MainComponent implements OnInit {
+	public textParameters: any = {
+		isColorTextWhite: true,
+		textLeft: true
+	}
+	public headerInfo = {
+		title: 'Welcome to Rosebud',
+		subTitle: 'Time to Blossom',
+		text: 'Discover a world of growth and new beginnings. Here, you\'ll find the inspiration, tools, and support to grow into your full potential. Let your journey with Rosebud lead you to flourish like never before.'
+	}
+	public imageUrl: string = 'img/headers/h1-parallax-img-1.jpg'
 	public aboutObj: any[] = [
 	  {
 		  imgPath: '/img/icons/custom-icon-1.png',

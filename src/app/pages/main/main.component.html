@@ -17,3 +17,54 @@
 		</div>
 	}
 </div>
+<app-parallax [imageUrl]="imageUrl">
+	<div class="header__container">
+		<div class="header__title title animated-item">{{ headerInfo.title }}</div>
+		<div class="header__sub-title sub-title animated-item">{{ headerInfo.subTitle }}</div>
+		<p class="header__text white text animated-item">{{ headerInfo.text }}</p>
+	</div>
+</app-parallax>
+<div class="container__about xl mx-auto flex items-center justify-center flex-wrap gap-5 md:gap-20">
+	@for(item of aboutObj; track item) {
+		<div class="about__item max-w-md lg:max-w-80 p-1 w-full">
+			<div class="item__icon mb-5 flex justify-self-center">
+				<img [src]="item.imgPath" alt="icon">
+			</div>
+			<div class="item__title mb-5">
+				<h2 class="text-center"z>
+					{{ item.title }}
+				</h2>
+			</div>
+			<div class="item__text">
+				<p class="text-center">
+					{{ item.text }}
+				</p>
+			</div>
+		</div>
+	}
+</div>
+
+<app-parallax [imageUrl]="imageUrl">
+	<div class="header__container">
+		<app-column [item]="headerInfo" [textParameters]="textParameters"></app-column>
+	</div>
+</app-parallax>
+<div class="container__about xl mx-auto flex items-center justify-center flex-wrap gap-5 md:gap-20">
+	@for(item of aboutObj; track item) {
+		<div class="about__item max-w-md lg:max-w-80 p-1 w-full">
+			<div class="item__icon mb-5 flex justify-self-center">
+				<img [src]="item.imgPath" alt="icon">
+			</div>
+			<div class="item__title mb-5">
+				<h2 class="text-center"z>
+					{{ item.title }}
+				</h2>
+			</div>
+			<div class="item__text">
+				<p class="text-center">
+					{{ item.text }}
+				</p>
+			</div>
+		</div>
+	}
+</div>

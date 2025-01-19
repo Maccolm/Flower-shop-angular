@@ -1,0 +1,31 @@
+<div class="column__container">
+	<div class="column__title title" 
+		[class.white]="textParameters.isColorTextWhite"
+		[class.textLeft]="textParameters.textLeft">
+			{{ item.title }}
+	</div>
+	<div class="column__sub-title sub-title"
+		[class.white]="textParameters.isColorTextWhite"
+		[class.textLeft]="textParameters.textLeft">
+			{{ item.subTitle }}
+	</div>
+	<p class="column__text text"
+		[class.white]="textParameters.isColorTextWhite"
+		[class.textLeft]="textParameters.textLeft">
+			{{ item.text }}
+	</p>
+	@if( item.name ) {
+		<p class="column__text text"
+			[class.white]="textParameters.isColorTextWhite"
+			[class.textLeft]="textParameters.textLeft">
+				{{ item.name }}
+		</p>
+	}
+	<div *ngIf="item.link as link">
+		<a [href]="link.src"
+			[class.white]="textParameters.isColorTextWhite"
+			[class.textLeft]="textParameters.textLeft">
+				{{link.value}}
+			</a>
+	</div>
+</div>
