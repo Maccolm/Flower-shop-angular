@@ -1,17 +1,24 @@
 export const clientStatistics = [
 	{
+		id: 1,
 		title: 'blog posts',
 		value: 86
 	},
 	{
+		id: 2,
+		duration: 1,
 		title: 'happy clients',
 		value: 25
 	},
 	{
+		id: 3,
+		duration: 1,
 		title: 'web awards',
 		value: 18
 	},
 	{
+		id: 4,
+		duration: 1,
 		title: 'flower sorts',
 		value: 98
 	},

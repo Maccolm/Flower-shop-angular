@@ -4,6 +4,7 @@ import { ParallaxComponent } from '../../components/parallax/parallax.component'
 import { ColumnComponent } from '../../components/column/column.component';
 import { clientStatistics } from '../../../../mock-data';
 import { MainPageProductsSectionsComponent } from '../../components/products/main-page-products-sections/main-page-products-sections.component';
+import { ClientStatistics } from '../../models/column.models';
 MainPageProductsSectionsComponent
 
 @Component({
@@ -14,7 +15,7 @@ MainPageProductsSectionsComponent
   styleUrl: './main.component.scss'
 })
 export class MainComponent implements OnInit {
-	public clientStatistics: {title: string, value: number}[]  = clientStatistics
+	public clientStatistics: ClientStatistics[]  = clientStatistics
 	public textParameters: any = {
 		isColorTextWhite: true,
 		textCenter: true

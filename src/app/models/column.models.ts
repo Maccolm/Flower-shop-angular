@@ -8,3 +8,9 @@ export interface ColumnModel {
 	},
 	name?: string
 }
+export interface ClientStatistics {
+	id: number,
+	title: string,
+	value: number,
+	duration: number
+}
