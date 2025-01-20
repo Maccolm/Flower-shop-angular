@@ -13,12 +13,14 @@
 		max-width: 880px;
 	}
 	&__title {
+		color: #fff;
 		font-size: 70px;
 		@media screen and (max-width: 1120px) {
 			font-size: 55px;
 		}
 	}
 	&__sub-title {
+		color: #fff;
 		font-size: 75px;
 		@media screen and (max-width: 1120px) {
 			font-size: 36px;
@@ -28,4 +30,28 @@
 		}
 	}
  }
+ .counter {
+	@media screen and (max-width: 1005px) {
+		flex-wrap: wrap;
+	}		
+	&__column {
+		padding: 30px 15px 0;
+		@media screen and (max-width: 1005px) {
+			flex: 0 1 48%;
+			padding: 0;
+		}
+	}
+	&__number {
+		font-family: 'Lora', sans-serif;
+		font-size: 36px;
+	}
+	&__title {
+		text-transform: uppercase;
+		font-family: 'Lora', sans-serif;
+		font-size: 20px;
+		font-weight: 300;
+	}
+ }
+
+ 
  

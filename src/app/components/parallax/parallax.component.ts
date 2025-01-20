@@ -1,5 +1,5 @@
 import { animate, stagger, transition, trigger, query, style } from '@angular/animations';
-import { AfterViewInit, Component, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-parallax',
@@ -25,7 +25,7 @@ import { AfterViewInit, Component, ElementRef, HostListener, Input, Renderer2 } 
 export class ParallaxComponent implements AfterViewInit{
 	@Input() imageUrl: string = '';
 	translateY: number = 0;
-	constructor(private el: ElementRef, private renderer: Renderer2) {}
+	constructor(private el: ElementRef, private renderer: Renderer2, private cdr: ChangeDetectorRef) {}
 
 	ngAfterViewInit(): void {
 		this.updateTranslateY()
@@ -54,6 +54,7 @@ export class ParallaxComponent implements AfterViewInit{
 				this.renderer.removeStyle(this.el.nativeElement, 'transform');
 			}
 			this.renderer.setStyle(this.el.nativeElement, 'transform', `translateY(${this.translateY}px`);
+			this.cdr.detectChanges();
 		}
 	}
 }

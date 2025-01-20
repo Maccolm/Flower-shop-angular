@@ -1,0 +1,78 @@
+@use '../../../assets/stylesheets/variables.scss' as variables;
+.item {
+  &__container {
+	padding: 0 10px;
+	max-width: 400px;
+  }
+  &__media {
+	max-height: 485px;
+	position: relative;
+	z-index: 1;
+	margin-bottom: 22px;
+	@media screen and (max-width: 430px) {
+		margin-bottom: 10px;
+	}
+  }
+  &__img {
+	position: relative;
+	z-index: 1;
+  }
+  &__hover {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 2;
+  }
+  &__info {
+	a {
+		display: inline-block;
+		font-size: 17px;
+		text-transform: uppercase;
+		margin-bottom: 6px;
+		transition: color 0.3s ease 0s;
+		&:hover{
+			color: variables.$lightGrey;
+		}
+		@media screen and (max-width: 430px) {
+			margin-bottom: 2px;
+		}
+	}
+  }
+}
+.hover__overlay {
+  @extend .item__hover;
+  background-color: #00000078;
+  transition: 0.3s ease 0s;
+  z-index: 5;
+  opacity: 0;
+}
+.item__media:hover .hover__overlay{
+	opacity: 1;
+}
+
+//sold or sale
+.on-sale.item__media::before, .sold.item__media::before{
+	content: "";
+	color: #fff;
+	padding: 12px 0px 10px 11px;
+	z-index: 10;
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	top: 0;
+	right: 0;
+	background-color: variables.$greyColor;
+}
+.sold.item__media::before{
+	content: "Sold";
+}
+.on-sale.item__media::before{
+	content: "Sale";
+}
+.line-through {
+	padding-right: 10px;
+	text-decoration: line-through;
+	color: variables.$greyColor;
+}

@@ -16,6 +16,6 @@ export class ColumnComponent {
 	};
 	@Input() textParameters: any = {
 		isColorTextWhite: false,
-		textLeft: false
+		textCenter: false
 	};
 }

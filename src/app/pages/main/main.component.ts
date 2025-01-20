@@ -2,18 +2,22 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ParallaxComponent } from '../../components/parallax/parallax.component';
 import { ColumnComponent } from '../../components/column/column.component';
+import { clientStatistics } from '../../../../mock-data';
+import { MainPageProductsSectionsComponent } from '../../components/products/main-page-products-sections/main-page-products-sections.component';
+MainPageProductsSectionsComponent
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [CommonModule, ParallaxComponent, ColumnComponent],
+  imports: [CommonModule, ParallaxComponent, ColumnComponent, MainPageProductsSectionsComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
 export class MainComponent implements OnInit {
+	public clientStatistics: {title: string, value: number}[]  = clientStatistics
 	public textParameters: any = {
 		isColorTextWhite: true,
-		textLeft: true
+		textCenter: true
 	}
 	public headerInfo = {
 		title: 'Welcome to Rosebud',

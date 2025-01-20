@@ -1,0 +1,19 @@
+$greyColor: #1b1b1b;
+.btn {
+	padding: 20px 32px;
+	font-size: 12px;
+	text-transform: uppercase;
+	transition: all 0.3s ease 0s;
+	font-weight: 400;
+	font-family: "Open Sans";
+	&-white {
+		color: $greyColor;
+		background-color: #fff;
+		
+		&:hover {
+			color: #fff;
+			background-color: $greyColor;
+			border-color: $greyColor;
+		}
+	}
+}

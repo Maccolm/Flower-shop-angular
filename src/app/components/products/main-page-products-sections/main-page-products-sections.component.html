@@ -1,0 +1,12 @@
+<div class="wrapper">
+	<div class="container mx-auto">
+		<app-column [item]="titleInfo" [textParameters]="{ textCenter: true }"></app-column>
+		<div class="product__list inner-container">
+			@for(product of productList; track product.id) {
+				<div class="product__item">
+					<app-card-product [product]="product"></app-card-product>
+				</div>
+			}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,29 @@
+
+<div class="item__container">
+	<div class="item__media"
+		[ngClass]="{
+			'sold': product.quantity === 0,
+			'on-sale': product.sale
+		}">	
+	<img [src]="product.imgSrc" alt="productImg">
+		<div class="item__img">
+		</div>
+		<div class="item__hover">
+			<div class="hover__overlay flex justify-center items-center">
+				<button class="btn btn-white">Add to cart</button>
+			</div>
+		</div>
+	</div>
+	<div class="item__info text-center">
+		<a [href]="product.link">{{ product.title }}</a>
+		<p>
+			<span
+				[ngClass]="{ 'line-through': product.sale }">
+					${{ product.price }}
+			</span>
+			@if(product.sale){
+				<span>${{ product.salePrice }}</span>
+			}
+		</p>
+	</div>
+</div>

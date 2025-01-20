@@ -1,30 +1,32 @@
 <div class="column__container">
-	<div class="column__title title" 
+	<div class="column__title title"
 		[class.white]="textParameters.isColorTextWhite"
-		[class.textLeft]="textParameters.textLeft">
+		[class.text-center]="textParameters.textCenter">
 			{{ item.title }}
 	</div>
 	<div class="column__sub-title sub-title"
 		[class.white]="textParameters.isColorTextWhite"
-		[class.textLeft]="textParameters.textLeft">
+		[class.text-center]="textParameters.textCenter">
 			{{ item.subTitle }}
 	</div>
-	<p class="column__text text"
-		[class.white]="textParameters.isColorTextWhite"
-		[class.textLeft]="textParameters.textLeft">
-			{{ item.text }}
-	</p>
+	@if( item.text ) {
+		<p class="column__text text"
+			[class.white]="textParameters.isColorTextWhite"
+			[class.text-center]="textParameters.textCenter">
+				{{ item.text }}
+		</p>
+	}
 	@if( item.name ) {
 		<p class="column__text text"
 			[class.white]="textParameters.isColorTextWhite"
-			[class.textLeft]="textParameters.textLeft">
+			[class.text-center]="textParameters.textCenter">
 				{{ item.name }}
 		</p>
 	}
 	<div *ngIf="item.link as link">
 		<a [href]="link.src"
 			[class.white]="textParameters.isColorTextWhite"
-			[class.textLeft]="textParameters.textLeft">
+			[class.text-center]="textParameters.textCenter">
 				{{link.value}}
 			</a>
 	</div>
