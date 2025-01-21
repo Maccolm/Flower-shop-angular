@@ -1,6 +1,7 @@
 export const clientStatistics = [
 	{
 		id: 1,
+		duration: 1,
 		title: 'blog posts',
 		value: 86
 	},
@@ -59,5 +60,25 @@ export const mainProducts = [
 		sale: false,
 		salePrice: 0,
 		quantity: 15
+	},
+]
+export const reviews = [
+	{
+		title: 'Testimonials',
+		subTitle: 'An Experience Delivered',
+		text: 'The shopping experience was seamless, and the flowers were delivered right on time. They were fresh, vibrant, and made my day extra special!',
+		name: 'Emily S.'
+	},
+	{
+		title: 'Testimonials',
+		subTitle: 'The Art of Fresher Flowers',
+		text: 'I have never seen flowers this fresh! The arrangements were stunning, and the fragrance filled the room. A true masterpiece.',
+		name: 'Jonathan R'
+	},
+	{
+		title: 'Testimonials',
+		subTitle: 'Our Happy Customers',
+		text: 'This flower shop has never disappointed me. Every bouquet is crafted with love, and their service is impeccable. Highly recommended!',
+		name: 'Sophia L.'
 	},
 ]

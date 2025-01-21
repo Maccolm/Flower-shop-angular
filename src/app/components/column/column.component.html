@@ -23,11 +23,11 @@
 				{{ item.name }}
 		</p>
 	}
-	<div *ngIf="item.link as link">
+	<div class="mt-12" *ngIf="item.link as link">
 		<a [href]="link.src"
 			[class.white]="textParameters.isColorTextWhite"
-			[class.text-center]="textParameters.textCenter">
+			class="btn btn-transparet">
 				{{link.value}}
-			</a>
+		</a>
 	</div>
 </div>

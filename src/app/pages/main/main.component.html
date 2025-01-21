@@ -1,5 +1,5 @@
 
-<app-parallax [imageUrl]="imageUrl">
+<app-parallax [imageUrl]="imageParallaxUrl_1">
 	<div class="header__container">
 		<div class="header__title title animated-item">{{ headerInfo.title }}</div>
 		<div class="header__sub-title sub-title animated-item">{{ headerInfo.subTitle }}</div>
@@ -29,13 +29,14 @@
 <!-- product section -->
 <app-main-page-products-sections></app-main-page-products-sections>
 
-<app-parallax [imageUrl]="imageUrl">
+<app-parallax [imageUrl]="imageParallaxUrl_1">
 	<div class="counter flex justify-around items-center gap-5">
 		@for ( item of clientStatistics; track item.value ) {
 			<div class="counter__column text-center">
-				<p class="counter__number white">
-					{{ item.value }}
-				</p>
+				<!-- Counter -->
+				 <div class="counter__number">
+					 <app-number-counter [number]="item.value" [duration]="item.duration" [isTextWhite] = "true"></app-number-counter>
+				 </div>
 				<p class="counter__title white">
 					{{ item.title }}
 				</p>
@@ -43,3 +44,13 @@
 		}
 	</div>
 </app-parallax>
+<!-- perfect spot section -->
+<app-perfect-spot></app-perfect-spot>
+<!-- parallax section  -->
+ <app-parallax [imageUrl]="imageParallaxUrl_2">
+	<p-carousel [value]="reviews" [numVisible]="1" [circular]="true" >
+		<ng-template let-review>
+			<app-column [item]="review" [textParameters]="textParameters"></app-column>
+		</ng-template>
+	</p-carousel>
+ </app-parallax>

@@ -16,4 +16,13 @@ $greyColor: #1b1b1b;
 			border-color: $greyColor;
 		}
 	}
+	&-transparet {
+		color: $greyColor;
+		background-color: transparent;
+		border: 1px solid $greyColor;
+		&:hover {
+			background-color: $greyColor;
+			color: #fff;
+		}
+	}
 }
