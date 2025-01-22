@@ -12,14 +12,17 @@
 	@if( item.text ) {
 		<p class="column__text text"
 			[class.white]="textParameters.isColorTextWhite"
-			[class.text-center]="textParameters.textCenter">
+			[class.text-center]="textParameters.textCenter"
+			[class.text-small] ="textParameters.textSmall"
+			[class.text-dark] ="textParameters.textDark">
 				{{ item.text }}
 		</p>
 	}
 	@if( item.name ) {
-		<p class="column__text text"
+		<p class="column__text text mt-5"
 			[class.white]="textParameters.isColorTextWhite"
-			[class.text-center]="textParameters.textCenter">
+			[class.text-center]="textParameters.textCenter"
+			[class.text-small] ="textParameters.textSmall">
 				{{ item.name }}
 		</p>
 	}

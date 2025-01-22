@@ -52,6 +52,13 @@
 		font-weight: 300;
 	}
  }
+//  carousel
+::ng-deep .custom-carousel .p-carousel-item  {
+	padding: 5% 20%;
+}
+::ng-deep .custom-carousel .p-button-text.p-button-secondary svg {
+	color: #fff;
+}
 
  
  

@@ -28,7 +28,7 @@ export class MainComponent implements OnInit {
 	public clientStatistics: ClientStatistics[]  = clientStatistics
 	public textParameters: any = {
 		isColorTextWhite: true,
-		textCenter: true
+		textCenter: true,
 	}
 	public headerInfo = {
 		title: 'Welcome to Rosebud',

@@ -48,9 +48,23 @@
 <app-perfect-spot></app-perfect-spot>
 <!-- parallax section  -->
  <app-parallax [imageUrl]="imageParallaxUrl_2">
-	<p-carousel [value]="reviews" [numVisible]="1" [circular]="true" >
-		<ng-template let-review>
-			<app-column [item]="review" [textParameters]="textParameters"></app-column>
-		</ng-template>
-	</p-carousel>
+	<div class="inner-container">
+		<p-carousel [value]="reviews" [numVisible]="1" [circular]="true"  class="custom-carousel">
+			<!-- custom arrows -->
+			<ng-template pTemplate="previousicon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19L8 12L15 5"/>
+				</svg>
+			 </ng-template>
+			 
+			 <ng-template pTemplate="nexticon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19L16 12L9 5"/>
+				</svg>
+			 </ng-template>
+			<ng-template let-review #item>
+				<app-column [item]="review" [textParameters]="textParameters"></app-column>
+			</ng-template>
+		</p-carousel>
+	</div>
  </app-parallax>
