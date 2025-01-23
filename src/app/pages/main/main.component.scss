@@ -55,9 +55,35 @@
 //  carousel
 ::ng-deep .custom-carousel .p-carousel-item  {
 	padding: 5% 20%;
+	@media screen and (max-width: 655px) {
+		padding: 5%;
+	}
+	@media screen and (max-width: 490px) {
+		padding: 0%;
+	}
+}
+::ng-deep .custom-carousel .p-carousel-prev-button {
+	@media screen and (max-width: 490px) {
+		height: 30px;
+		width: 30px;
+	}
+}
+::ng-deep .custom-carousel .p-button-text.p-button-rounded {
+	padding: 0;
+	@media screen and (max-width: 490px) {
+		height: 30px;
+		width: 30px;
+	}
 }
 ::ng-deep .custom-carousel .p-button-text.p-button-secondary svg {
 	color: #fff;
+}
+::ng-deep .custom-carousel .p-carousel-indicator-active .p-carousel-indicator-button {
+	height: 10px !important;
+	width: 10px !important;
+}
+::ng-deep .custom-carousel .p-carousel-indicator-list {
+	align-items: center;
 }
 
  

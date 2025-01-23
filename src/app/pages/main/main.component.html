@@ -49,7 +49,7 @@
 <!-- parallax section  -->
  <app-parallax [imageUrl]="imageParallaxUrl_2">
 	<div class="inner-container">
-		<p-carousel [value]="reviews" [numVisible]="1" [circular]="true"  class="custom-carousel">
+		<p-carousel [value]="reviews" [numVisible]="1" [circular]="false" [indicatorStyle]="indicatorStyle" class="custom-carousel">
 			<!-- custom arrows -->
 			<ng-template pTemplate="previousicon">
 				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" viewBox="0 0 24 24" stroke="currentColor">

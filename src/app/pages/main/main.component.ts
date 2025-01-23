@@ -25,6 +25,13 @@ import { ColumnComponent } from "../../components/column/column.component";
   styleUrl: './main.component.scss'
 })
 export class MainComponent implements OnInit {
+	public indicatorStyle: any = {
+		height: '7px',
+		width: '7px',
+		backgroundColor: 'white',
+		borderRadius: '50%',
+
+	}
 	public clientStatistics: ClientStatistics[]  = clientStatistics
 	public textParameters: any = {
 		isColorTextWhite: true,
