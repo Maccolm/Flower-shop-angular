@@ -8,6 +8,7 @@ import { NumberCounterComponent } from '../../components/number-counter/number-c
 import { PerfectSpotComponent } from '../about-parts/perfect-spot/perfect-spot.component';
 import { CarouselModule } from 'primeng/carousel';
 import { ColumnComponent } from "../../components/column/column.component";
+import { ExpertTeamComponent } from '../about-parts/expert-team/expert-team.component';
 
 @Component({
   selector: 'app-main',
@@ -19,7 +20,8 @@ import { ColumnComponent } from "../../components/column/column.component";
     NumberCounterComponent,
     PerfectSpotComponent,
     CarouselModule,
-    ColumnComponent
+    ColumnComponent,
+	 ExpertTeamComponent
 ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
@@ -62,6 +64,11 @@ export class MainComponent implements OnInit {
 	  }
   ]
   public reviews = reviews
+  public mediaPath: any[] = [
+	{
+		imgPath: '/img/'
+	}
+  ]
 	ngOnInit(): void {
 	}
 }

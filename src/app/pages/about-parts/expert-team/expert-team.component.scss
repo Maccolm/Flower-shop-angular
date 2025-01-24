@@ -1,0 +1,19 @@
+@use '../../../assets/stylesheets/variables.scss' as variables;
+.experts {
+	padding: 100px 0;
+	background: url('/img/backgrounds/h1-img-2.jpg') center no-repeat;
+	background-size: contain;
+}
+.item__content {
+	> h3 {
+		font-size: 17px;
+		letter-spacing: 1px;
+	}
+}
+.ng-fa-icon {
+	transition: color 0.2s ease-out 0s;
+	&:hover {
+		cursor: pointer;
+		color: variables.$lightGrey;
+	}
+}

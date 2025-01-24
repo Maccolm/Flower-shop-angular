@@ -1,0 +1,24 @@
+<div class="wrapper experts">
+	<div class="inner-container">
+		<div class="experts__header md:mb-20 mb-5">
+			<app-column [item]="header" [textParameters]="{ textCenter: true }"></app-column>
+		</div>
+		<div class="experts__row flex flex-wrap lg:flex-nowrap justify-center gap-5 mb">
+			@for (item of team; track item.id) {
+				<div class="item__column max-w-sm">
+					<div class="item__img mb-2 md:mb-7">
+						<img [src]="item.img" alt="our team">
+					</div>
+					<div class="item__content text-center">
+						<h3 class="inline-block md:mb-2 mb-0">{{item.name}}</h3>
+						<p>{{item.position}}</p>
+						<div class="item__icons md:mt-2 mt-4 flex justify-center gap-5">
+							<fa-icon [icon]="faFacebookF"></fa-icon>
+							<fa-icon [icon]="faTwitter"></fa-icon>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+</div>
