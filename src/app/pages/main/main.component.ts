@@ -66,8 +66,17 @@ export class MainComponent implements OnInit {
   public reviews = reviews
   public mediaPath: any[] = [
 	{
-		imgPath: '/img/'
-	}
+		imgPath: '/img/products/gallery-img-1.jpg'
+	},
+	{
+		imgPath: '/img/products/gallery-img-2.jpg'
+	},
+	{
+		imgPath: '/img/products/gallery-img-3.jpg'
+	},
+	{
+		imgPath: '/img/products/gallery-img-4.jpg'
+	},
   ]
 	ngOnInit(): void {
 	}

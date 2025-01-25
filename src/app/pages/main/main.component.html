@@ -73,7 +73,11 @@
   <app-expert-team></app-expert-team>
   <!-- media -->
 	<section class="media">
-		<div class="media__container flex-wrap lg:flex-nowrap flex pt-5">
-			@for()
+		<div class="media__container flex-wrap lg:flex-nowrap flex overflow-hidden">
+			@for( picture of mediaPath; track picture.imgPath ) {
+				<div class="media__item lg:w-full overflow-hidden">
+					<img [src]="picture.imgPath" class="hover:scale-105 transition-transform duration-500" alt="flowers">
+				</div>
+			}
 		</div>
 	</section>
