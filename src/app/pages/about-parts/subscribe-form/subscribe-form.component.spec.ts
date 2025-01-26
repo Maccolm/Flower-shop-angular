@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonCheckComponent } from './button-check.component';
+import { SubscribeFormComponent } from './subscribe-form.component';
 
-describe('ButtonCheckComponent', () => {
-  let component: ButtonCheckComponent;
-  let fixture: ComponentFixture<ButtonCheckComponent>;
+describe('SubscribeFormComponent', () => {
+  let component: SubscribeFormComponent;
+  let fixture: ComponentFixture<SubscribeFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ButtonCheckComponent]
+      imports: [SubscribeFormComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ButtonCheckComponent);
+    fixture = TestBed.createComponent(SubscribeFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

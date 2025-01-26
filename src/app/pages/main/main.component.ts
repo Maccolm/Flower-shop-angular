@@ -9,6 +9,7 @@ import { PerfectSpotComponent } from '../about-parts/perfect-spot/perfect-spot.c
 import { CarouselModule } from 'primeng/carousel';
 import { ColumnComponent } from "../../components/column/column.component";
 import { ExpertTeamComponent } from '../about-parts/expert-team/expert-team.component';
+import { SubscribeFormComponent } from '../about-parts/subscribe-form/subscribe-form.component';
 
 @Component({
   selector: 'app-main',
@@ -21,7 +22,8 @@ import { ExpertTeamComponent } from '../about-parts/expert-team/expert-team.comp
     PerfectSpotComponent,
     CarouselModule,
     ColumnComponent,
-	 ExpertTeamComponent
+	 ExpertTeamComponent,
+	 SubscribeFormComponent
 ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'

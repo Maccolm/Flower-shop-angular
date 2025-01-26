@@ -1,4 +1,5 @@
 $greyColor: #1b1b1b;
+$lightGrey: #777;
 .btn {
 	padding: 20px 32px;
 	font-size: 12px;
@@ -6,6 +7,7 @@ $greyColor: #1b1b1b;
 	transition: all 0.3s ease 0s;
 	font-weight: 400;
 	font-family: "Open Sans";
+	// White
 	&-white {
 		color: $greyColor;
 		background-color: #fff;
@@ -16,6 +18,7 @@ $greyColor: #1b1b1b;
 			border-color: $greyColor;
 		}
 	}
+	// transparent
 	&-transparet {
 		color: $greyColor;
 		background-color: transparent;
@@ -23,6 +26,13 @@ $greyColor: #1b1b1b;
 		&:hover {
 			background-color: $greyColor;
 			color: #fff;
+		}
+	}
+	&-dark {
+		color: #fff;
+		background-color: $greyColor;
+		&:hover {
+			background-color: $lightGrey;
 		}
 	}
 }

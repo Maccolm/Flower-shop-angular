@@ -1,0 +1,21 @@
+$PINK: #fff0e9;
+.wrapper {
+		background-color: $PINK;
+}
+h3 {
+	font-size: 23px;
+	letter-spacing: 1.5px;
+	@media screen and (max-width: 515px) {
+		font-size: 17px;
+	}
+}
+.input{
+	background-color: #fff;
+	max-width: 680px;
+	width: 100%;
+	padding: 17px 25px;
+	@media screen and (max-width: 655px) {
+		display: block;
+		margin-bottom: 12px;
+	}
+}

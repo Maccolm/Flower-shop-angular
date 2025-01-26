@@ -5,6 +5,7 @@ import { providePrimeNG } from 'primeng/config';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import Aura from '@primeng/themes/aura';
+import { ConfirmationService } from 'primeng/api';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
@@ -16,5 +17,6 @@ export const appConfig: ApplicationConfig = {
 			preset: Aura,	
 		}, 
     }),
+	 ConfirmationService,
   ],
 };
