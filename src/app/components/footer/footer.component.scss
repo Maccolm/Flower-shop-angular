@@ -1,0 +1,32 @@
+@use '../../assets/stylesheets/variables.scss' as variables;
+.wrapper-footer{
+	background-color: variables.$greyColor;
+}
+h3 {
+	color: white;
+	margin-bottom: 20px;
+	letter-spacing: 1.5px;
+	@media screen and (max-width: 768px) {
+		margin-bottom: 10px;		
+	}
+}
+p {
+	line-height: 1.7;
+}
+.footer {
+  &__body {}
+  &__column {
+	max-width: 290px;
+  }
+  &__rights {
+	background-color: #101010
+  }
+}
+.img{
+	display: inline-block;
+	width: 120px;
+	margin-bottom: 25px;
+	@media screen and (max-width: 768px) {
+		margin-bottom: 8px;
+	}
+}

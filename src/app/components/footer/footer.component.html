@@ -1,0 +1,33 @@
+<div class="wrapper-footer">
+	<div class="inner-container py-20 max-[740px]:px-20 max-[430px]:px-5 max-[430px]:py-5 px-10 lg:px-2 md:pt-20 md:pb-16">
+		<div class="footer__body flex gap-12 xl:gap-3 max-[740px]:justify-start justify-around flex-wrap xl:flex-nowrap">
+			<div class="footer__column">
+				<img [src]="logoColumn.logo" alt="logo" class="img">
+				<p>{{ logoColumn.text }}</p>
+			</div>
+			<div class="footer__column">
+				<h3>{{ schedule.title }}</h3>
+				<ul>
+					@for( item of schedule.workHours; track item ) {
+						<li><p>{{ item }}</p></li>
+					}
+				</ul>
+			</div>
+			<div class="footer__column">
+				<h3>{{ contacts.title }}</h3>
+				<ul>
+					<li><p>Address: {{ contacts.address }}</p></li>
+					<li><p>Address 2: {{ contacts.address2 }}</p></li>
+					<li><p>Phone: {{ contacts.phone }}</p></li>
+					<li><p>Email: {{ contacts.email }}</p></li>
+				</ul>
+			</div>
+			<div class="footer__column">
+				<h3>Follow Us on instagram</h3>
+			</div>
+		</div>
+	</div>
+	<div class="footer__rights text-center py-5">
+		<p>2025 © All rights reserved, Build By Vitalii</p>
+	</div>
+</div>
