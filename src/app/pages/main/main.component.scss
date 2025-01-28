@@ -56,7 +56,7 @@ $PINK: #fff0e9;
  }
 //  carousel
 ::ng-deep .custom-carousel .p-carousel-item  {
-	padding: 5% 20%;
+	padding: 0% 20% 5% 20%;
 	@media screen and (max-width: 655px) {
 		padding: 5%;
 	}

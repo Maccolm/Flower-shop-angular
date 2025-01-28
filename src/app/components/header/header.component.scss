@@ -1,0 +1,44 @@
+@use '../../assets/stylesheets/buttons.scss' as *;
+.logo {
+	width: 120px;
+	margin-right: auto;
+}
+.custom-menubar {
+	position: absolute;
+	padding: 30px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 100;
+}
+::ng-deep .custom-menubar .p-menubar-start {
+	margin-right: auto;
+}
+::ng-deep .p-menubar-end {
+	margin-left: 0 !important;
+}
+::ng-deep .p-menubar {
+	background: none !important;
+	border: none !important;
+}
+::ng-deep .p-menubar-item-label, .auth-btn {
+	padding: 0 15px;
+	font-size: 12px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	transition: color 0.2s ease 0s ;
+}
+::ng-deep .p-menubar-submenu {
+	display: flex !important;
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease-out, opacity 0.2s ease 0.18s;
+} 
+::ng-deep .p-menubar-item-active .p-menubar-submenu {
+	max-height: 100px;
+	opacity: 1;
+	transition: max-height 0.3s ease-out, opacity 0.2s ease;
+}
