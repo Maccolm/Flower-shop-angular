@@ -3,6 +3,11 @@
 	width: 120px;
 	margin-right: auto;
 }
+@media screen and (max-width: 370px){
+	.logo-header{
+		width: 80px;
+	}
+}
 .custom-menubar {
 	position: absolute;
 	padding: 30px;
@@ -28,7 +33,10 @@
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
-	transition: color 0.2s ease 0s ;
+	transition: color 0.2s ease 0s;
+	@media screen and (max-width: 468px) {
+		padding: 0;
+	}
 }
 ::ng-deep .p-menubar-submenu {
 	display: flex !important;
@@ -41,4 +49,21 @@
 	max-height: 100px;
 	opacity: 1;
 	transition: max-height 0.3s ease-out, opacity 0.2s ease;
+}
+//for mobile
+@media screen and (max-width: 960px) {
+	::ng-deep .p-menubar-root-list {
+		left: 0 !important;
+		top: 100%;
+		display: flex !important;
+		opacity: 0;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease-out, opacity 0.2s ease 0.18s;
+	}
+	::ng-deep .p-menubar-mobile-active .p-menubar-root-list {
+		max-height: 300px;
+		opacity: 1;
+		transition: max-height 0.2s linear, opacity 0.2s ease;
+	}
 }
