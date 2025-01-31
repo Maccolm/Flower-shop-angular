@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" [ngClass]="{'bg-pink': isBgPink}">
 	<div class="inner-container md:py-10 py-5 mx-auto flex justify-center flex-col">
 		<h3 class="uppercase text-center inline-block md:mb-5 mb-2">Subscribe to our weekly newsletter</h3>
 		<form [formGroup]="form" (ngSubmit)="onSubmit() " class="flex justify-center max-[655px]:flex-col">

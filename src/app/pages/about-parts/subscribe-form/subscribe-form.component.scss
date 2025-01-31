@@ -1,8 +1,12 @@
 $PINK: #fff0e9;
-.wrapper {
-		background-color: $PINK;
+.bg-pink {
+	background-color: $PINK;
+	h3 {
+		color: #1B1B1B;
+	}
 }
 h3 {
+	color: #fff;
 	font-size: 23px;
 	letter-spacing: 1.5px;
 	@media screen and (max-width: 515px) {

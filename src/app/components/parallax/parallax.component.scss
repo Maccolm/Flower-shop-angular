@@ -13,9 +13,12 @@
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 200%; /* Висота зображення для плавного паралаксу */
+		height: 130%; /* Висота зображення для плавного паралаксу */
 		transform: translateY(-25%); /* Початкова позиція для половини висоти */
 		z-index: -1;
+	}
+	&__image-small {
+		height: 200%;
 	}
  }
  .content {
@@ -27,6 +30,9 @@
 	padding: 130px 20px;
 	@media screen and (max-width: 768px) {
 		padding: 80px 10px;
+	}
+	&__narrow {
+		padding: 0;
 	}
  }
  

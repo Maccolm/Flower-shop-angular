@@ -12,30 +12,30 @@ export class HeaderComponent {
 	menuItems = [
 		{
 			label: 'HOME',
-			href: '/'
+			routerLink:['/']
 		},
 		{
 			label: 'PRODUCT LIST',
-			href:'/products',
+			routerLink:['/products',]
 		},
 		{
 			label: 'ABOUT US',
-			href:'/about',
+			routerLink:['/about',]
 		},
 		{
 			label: 'CONTROL PANEL',
 			items: [
 				{
 					label: 'ADD PRODUCT',
-					href: 'products/product-form'
+					routerLink:['/products/product-form']
 				},
 				{
 					label: 'USERS',
-					href: 'users'
+					routerLink:['/users']
 				},
 				{
 					label: 'USERS TYPES',
-					href:'users_types/list'
+					routerLink:['/users_types/list']
 				}
 			]
 		},

@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faFacebookF, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { ColumnComponent } from '../../../components/column/column.component';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-expert-team',
-  imports: [FontAwesomeModule, ColumnComponent],
+  imports: [FontAwesomeModule, ColumnComponent, CommonModule],
   templateUrl: './expert-team.component.html',
   styleUrl: './expert-team.component.scss'
 })
 export class ExpertTeamComponent {
+	@Input() isBgImg: boolean = false;
 	header = {
 		title: 'Wonderful Team',
 		subTitle: 'our team of experts'

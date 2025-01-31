@@ -1,1 +1,8 @@
-<p>about works!</p>
+<app-parallax [imageUrl]="imgPath">
+	<h1 class="label uppercase py-32 text-white">about us</h1>
+</app-parallax>
+<app-perfect-spot></app-perfect-spot>
+<app-expert-team></app-expert-team>
+<app-parallax [imageUrl]="imgPath" [isImgSmall]="true">
+	<app-subscribe-form [isBgPink]="false"></app-subscribe-form>
+</app-parallax>

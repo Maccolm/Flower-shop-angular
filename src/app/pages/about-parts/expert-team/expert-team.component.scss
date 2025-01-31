@@ -1,8 +1,11 @@
 @use '../../../assets/stylesheets/variables.scss' as variables;
 .experts {
 	padding: 100px 0 80px;
-	background: url('/img/backgrounds/h1-img-2.jpg') center no-repeat;
 	background-size: contain;
+	background-color: variables.$PINK;
+}
+.bgImg {
+	background: url('/img/backgrounds/h1-img-2.jpg') center no-repeat;
 }
 .item__content {
 	> h3 {

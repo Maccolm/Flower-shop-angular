@@ -1,4 +1,4 @@
-<div class="wrapper experts">
+<div class="wrapper experts" [ngClass]="{ 'bgImg': isBgImg }">
 	<div class="inner-container">
 		<div class="experts__header md:mb-20 mb-5">
 			<app-column [item]="header" [textParameters]="{ textCenter: true }"></app-column>

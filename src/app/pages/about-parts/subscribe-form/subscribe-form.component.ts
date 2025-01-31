@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ConfirmationService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
@@ -11,6 +11,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
   styleUrl: './subscribe-form.component.scss'
 })
 export class SubscribeFormComponent implements OnInit{
+	@Input() isBgPink: boolean = true;
 	form!: FormGroup
 	constructor(private confirmationService: ConfirmationService) {}
 	ngOnInit() {

@@ -1,9 +1,10 @@
 import { animate, stagger, transition, trigger, query, style } from '@angular/animations';
+import { CommonModule } from '@angular/common';
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-parallax',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './parallax.component.html',
   styleUrl: './parallax.component.scss',
   animations: [
@@ -24,6 +25,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, 
 })
 export class ParallaxComponent implements AfterViewInit{
 	@Input() imageUrl: string = '';
+	@Input() isImgSmall: boolean = false;
 	translateY: number = 0;
 	constructor(private el: ElementRef, private renderer: Renderer2, private cdr: ChangeDetectorRef) {}
 
