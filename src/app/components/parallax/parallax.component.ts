@@ -23,15 +23,13 @@ import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, 
 	]),
   ],
 })
-export class ParallaxComponent implements AfterViewInit{
+export class ParallaxComponent{
 	@Input() imageUrl: string = '';
 	@Input() isImgSmall: boolean = false;
 	translateY: number = 0;
 	constructor(private el: ElementRef, private renderer: Renderer2, private cdr: ChangeDetectorRef) {}
 
-	ngAfterViewInit(): void {
-		this.updateTranslateY()
-	}
+
 //Розраховуємо висоту екрану та змінюємо висоту зображення відповідно для паралакс ефекту
 	@HostListener('window:scroll', ['$event'])
 	@HostListener('window:resize', ['$event'])
