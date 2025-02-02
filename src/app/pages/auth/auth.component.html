@@ -1,0 +1,28 @@
+<p-toast/>
+<p-dialog header="Log In" [modal]="true" [(visible)]="visible" [draggable]="false">
+	<form [formGroup]="loginForm" (ngSubmit)="onSubmitLogIn()">
+		<div class="form__section">
+			<label for="email">Email</label>
+			<input type="text" id="email" pInputText formControlName="email">
+		</div>
+		<div class="form__section">
+			<label for="password">Password</label>
+			<input type="password" id="password" pInputText formControlName="password">
+		</div>
+		@if(errorMessage) {
+			<div class="error-message">
+				<small>{{errorMessage}}</small>
+			</div>
+		}
+		<div class="form__btns">
+			<button class="btn" type="button" (click)="showRegistrationForm()">Sing Up</button>
+			<p-button 
+				type="submit" 
+				[disabled]="loginForm.invalid" 
+				class="btn btn-dark"
+				[loading]="loader"
+				[label]="loader ? '' : 'Log In'"	
+			/>
+		</div>
+	</form>
+</p-dialog>
