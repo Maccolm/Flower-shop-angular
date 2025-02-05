@@ -1,5 +1,5 @@
 <p-toast/>
-<p-dialog header="Log In" [modal]="true" [(visible)]="visible" [draggable]="false">
+<p-dialog header="Log In" [modal]="true" [(visible)]="isVisible" [draggable]="false">
 	<form [formGroup]="loginForm" (ngSubmit)="onSubmitLogIn()">
 		<div class="form__section">
 			<label for="email">Email</label>

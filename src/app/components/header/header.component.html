@@ -5,7 +5,12 @@
 		</a>
 	</ng-template>
 	<ng-template #end>
-		<a [routerLink]="['/auth']" class="auth-btn">LOGIN</a>
+		<p-button
+			[label]="isAuthenticated ? 'Log Out({{username}})' : 'Log In'"
+			[icon]="isAuthenticated ? '' : 'pi pi-sign-in'"
+			(onClick)="isAuthenticated ? logOut($event) : showForm()"
+		/>
 	</ng-template>
 </p-menubar>
+<app-auth/>
 

@@ -26,7 +26,7 @@ import { ButtonModule } from 'primeng/button';
   styleUrl: './auth.component.scss'
 })
 export class AuthComponent extends ClearObservable implements OnInit {
-	visible: boolean = false;
+	isVisible: boolean = false;
 	isSignUpVisible: boolean = false;
 	errorMessage: string = '';
 	singInErrorMessage: string = '';
@@ -55,6 +55,7 @@ export class AuthComponent extends ClearObservable implements OnInit {
 			email: new FormControl('', [Validators.required, Validators.email]),
 			password: new FormControl('', [Validators.required])
 		})
+		this.isVisible = this.authService.isVisibleLoginForm$();
 	}
 	onSubmitLogIn() {
 		if(this.loginForm.valid) {
@@ -68,7 +69,7 @@ export class AuthComponent extends ClearObservable implements OnInit {
 						this.errorMessage = ''
 						this.loader = false
 						setTimeout(() => {
-							this.visible = false;
+							this.isVisible = false; //try to chang through services
 						}, 500)
 						this.messageService.add({ severity: 'success', summary: 'Login Successful', detail: 'You have successfully logged in', life: 3000 })
 					}
