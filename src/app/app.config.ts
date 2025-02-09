@@ -5,7 +5,7 @@ import { providePrimeNG } from 'primeng/config';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import Aura from '@primeng/themes/aura';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { provideHttpClient } from '@angular/common/http';
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,6 +19,7 @@ export const appConfig: ApplicationConfig = {
 		}, 
     }),
 	 ConfirmationService,
+	 MessageService,
 	 provideHttpClient(),
   ],
 };

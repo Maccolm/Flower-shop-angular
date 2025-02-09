@@ -15,7 +15,7 @@ export class AuthService {
 	
   constructor(private http: HttpClient) { }
   get isVisibleLoginForm$() {
-	return this.isVisibleLoginForm
+	return this.isVisibleLoginForm.asReadonly()
   }
 
   isAuthenticated(): boolean {

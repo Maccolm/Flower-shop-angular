@@ -10,7 +10,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-header',
-  imports: [MenubarModule, RouterModule, ButtonModule, AuthComponent],
+  imports: [MenubarModule, RouterModule, ButtonModule, AuthComponent, AuthComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -58,7 +58,9 @@ export class HeaderComponent extends ClearObservable implements OnInit {
 		
 	}
 	showForm() {
-
+		console.log('activated show form');
+		
+		this.authService.setFormVisible();
 	}
 	logOut(event: Event){	
 		this.confirmationService.confirm({

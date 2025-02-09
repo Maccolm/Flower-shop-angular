@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, Inject, Input, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 import { BehaviorSubject } from "rxjs";
 
 @Component({
@@ -13,17 +13,15 @@ export class NumberCounterComponent implements OnInit, AfterViewInit{
 	@Input('duration') duration!: number;
 	@Input('isTextWhite') isTextWhite!: boolean;
 
-	counter = new BehaviorSubject<string>("0");
+	counter = new BehaviorSubject<number>(0);
 	private observer!: IntersectionObserver;
-
-	constructor(private el: ElementRef, private renderer: Renderer2,  @Inject(PLATFORM_ID) private platformId: Object) {}
+	private timer!: any;
+	constructor(private el: ElementRef) {}
 
 	ngOnInit(): void {}
 
 	ngAfterViewInit(): void {
-		if (isPlatformBrowser(this.platformId)) {
-			this.createObserver();
-		}
+		this.createObserver();
 	}
 	createObserver() {
 			const options = {
@@ -55,12 +53,17 @@ export class NumberCounterComponent implements OnInit, AfterViewInit{
 		 let duration = this.duration
 		 let incrementTime = (duration / end) * 1000;
 
-		 let timer = setInterval(() => {
+		 this.timer = setInterval(() => {
 			start += 1;
-			this.counter.next(String(start) + this.number.toString().substring(3));
+			this.counter.next(start);
 			if (start === end) {
-				clearInterval(timer);
+				clearInterval(this.timer);
 			}
 		 },incrementTime);
+	}
+	ngOnDestroy(): void {
+		if (this.timer) {
+			clearInterval(this.timer)
+		}
 	}
 }
