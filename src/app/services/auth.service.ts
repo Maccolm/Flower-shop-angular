@@ -11,12 +11,9 @@ export class AuthService {
 	private apiUrl = environment.BASE_URL
 	private isAuthenticatedSubject = new BehaviorSubject<boolean>(this.isAuthenticated());
 	public isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
-	public isVisibleLoginForm = signal<boolean>(false)
-	
+	private isVisibleLoginFormSubject = new BehaviorSubject<boolean>(false)
+	public isVisibleLoginForm$ = this.isVisibleLoginFormSubject.asObservable();
   constructor(private http: HttpClient) { }
-  get isVisibleLoginForm$() {
-	return this.isVisibleLoginForm.asReadonly()
-  }
 
   isAuthenticated(): boolean {
 	const token = localStorage.getItem('jwt_token');
@@ -30,9 +27,9 @@ export class AuthService {
 	localStorage.clear();
   }
   setFormVisible() {
-	this.isVisibleLoginForm.set(true)
+	this.isVisibleLoginFormSubject.next(true)
   }
   setFormNotVisible() {
-	this.isVisibleLoginForm.set(false)
+	this.isVisibleLoginFormSubject.next(false)
   }
 }

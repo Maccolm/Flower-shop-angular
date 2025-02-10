@@ -15,11 +15,11 @@
 			</div>
 		}
 		<div class="form__btns">
-			<button class="btn" type="button" (click)="showRegistrationForm()">Sing Up</button>
+			<p-button class="btn-transparent-header-dark" type="button" (click)="showRegistrationForm()" label="Sing Up"/>
 			<p-button 
 				type="submit" 
 				[disabled]="loginForm.invalid" 
-				class="btn btn-dark"
+				class="btn-transparent-header-dark"
 				[loading]="loader"
 				[label]="loader ? '' : 'Log In'"	
 			/>

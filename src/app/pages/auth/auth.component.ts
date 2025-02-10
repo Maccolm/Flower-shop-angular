@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, effect, OnInit, Signal } from '@angular/core';
 import { ClearObservable } from '../../directives/clearObservable';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
@@ -26,7 +26,6 @@ import { ButtonModule } from 'primeng/button';
   styleUrl: './auth.component.scss'
 })
 export class AuthComponent extends ClearObservable implements OnInit {
-	isVisible: boolean = false;
 	isSignUpVisible: boolean = false;
 	errorMessage: string = '';
 	singInErrorMessage: string = '';
@@ -35,11 +34,11 @@ export class AuthComponent extends ClearObservable implements OnInit {
 	loader: boolean = false;
 	singUpLoader: boolean = false;
 	isAuthenticated: boolean = false;
+	isVisible: boolean = false;
 
 	constructor (private authService: AuthService, private messageService: MessageService) {
 		super();
 	}
-
 	ngOnInit(): void{
 		this.authService.isAuthenticated$.pipe(takeUntil(this.destroy$)).subscribe(isAuthenticated => {
 			this.isAuthenticated = isAuthenticated;
@@ -55,7 +54,9 @@ export class AuthComponent extends ClearObservable implements OnInit {
 			email: new FormControl('', [Validators.required, Validators.email]),
 			password: new FormControl('', [Validators.required])
 		})
-		this.isVisible = this.authService.isVisibleLoginForm$();
+		this.authService.isVisibleLoginForm$.pipe(takeUntil(this.destroy$)).subscribe(show => {
+			this.isVisible = show
+		})
 	}
 	onSubmitLogIn() {
 		if(this.loginForm.valid) {
@@ -69,7 +70,7 @@ export class AuthComponent extends ClearObservable implements OnInit {
 						this.errorMessage = ''
 						this.loader = false
 						setTimeout(() => {
-							this.isVisible = false; //try to chang through services
+							this.authService.setFormNotVisible(); //try to chang through services
 						}, 500)
 						this.messageService.add({ severity: 'success', summary: 'Login Successful', detail: 'You have successfully logged in', life: 3000 })
 					}
@@ -86,6 +87,6 @@ export class AuthComponent extends ClearObservable implements OnInit {
 		}
 	}
 	showRegistrationForm() {
-
+		this.authService.setFormNotVisible();
 	}
 }
