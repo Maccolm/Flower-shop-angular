@@ -35,6 +35,7 @@ export class AuthComponent extends ClearObservable implements OnInit {
 	singUpLoader: boolean = false;
 	isAuthenticated: boolean = false;
 	isVisible: boolean = false;
+	isRegistrationVisible: boolean = false;
 
 	constructor (private authService: AuthService, private messageService: MessageService) {
 		super();
@@ -57,20 +58,26 @@ export class AuthComponent extends ClearObservable implements OnInit {
 		this.authService.isVisibleLoginForm$.pipe(takeUntil(this.destroy$)).subscribe(show => {
 			this.isVisible = show
 		})
+		this.authService.isVisibleRegistrationForm$.pipe(takeUntil(this.destroy$)).subscribe(show => {
+			this.isRegistrationVisible = show
+		})
 	}
 	onSubmitLogIn() {
+		console.log('submit login activated');
+		
 		if(this.loginForm.valid) {
 			this.loader = true;
 			const { email, password } = this.loginForm.value;
 			this.authService.login(email, password).pipe(takeUntil(this.destroy$)).subscribe({
 				next: (data) => {
-					if(data.token && data.pagePermissions){
+					if(data.token && data.pagesPermissions){
 						window.localStorage.setItem('jwt_token', data.token)
-						window.localStorage.setItem('permissions', JSON.stringify(data.pagePermissions))
+						window.localStorage.setItem('permissions', JSON.stringify(data.pagesPermissions))
+						this.authService.loggedIn()
 						this.errorMessage = ''
 						this.loader = false
 						setTimeout(() => {
-							this.authService.setFormNotVisible(); //try to chang through services
+							this.authService.setFormNotVisible();
 						}, 500)
 						this.messageService.add({ severity: 'success', summary: 'Login Successful', detail: 'You have successfully logged in', life: 3000 })
 					}
@@ -88,5 +95,13 @@ export class AuthComponent extends ClearObservable implements OnInit {
 	}
 	showRegistrationForm() {
 		this.authService.setFormNotVisible();
+		this.authService.set_Registration_Form_Visible();
+	}
+	onSubmitRegistration() {
+
+	}
+	showLoginForm() {
+		this.authService.set_Registration_Form_Not_Visible();
+		this.authService.setFormVisible();
 	}
 }

@@ -2,6 +2,9 @@ $activeGreyColor: rgb(167, 167, 167);
 body{
 	font-family: 'Montserrat';
 }
+input{
+	color: #000;
+}
 ::ng-deep.action__btns > button{
 	color: #f2f2f2;
 	font-size: 16px;

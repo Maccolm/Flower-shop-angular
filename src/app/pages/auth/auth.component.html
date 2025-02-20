@@ -26,3 +26,31 @@
 		</div>
 	</form>
 </p-dialog>
+<!-- Registration -->
+ <p-dialog header="Registration" [modal]="true" [(visible)]="isRegistrationVisible" [draggable]="false">
+	<form [formGroup]="loginForm" (ngSubmit)="onSubmitRegistration()">
+		<div class="form__section">
+			<label for="register-email">Email</label>
+			<input type="text" id="register-email" pInputText formControlName="email">
+		</div>
+		<div class="form__section">
+			<label for="register-password">Password</label>
+			<input type="password" id="register-password" pInputText formControlName="password">
+		</div>
+		@if(errorMessage) {
+			<div class="error-message">
+				<small>{{errorMessage}}</small>
+			</div>
+		}
+		<div class="form__btns">
+			<p-button class="btn-transparent-header-dark" type="button" (click)="showLoginForm()" label="Sing Up"/>
+			<p-button 
+				type="submit" 
+				[disabled]="loginForm.invalid" 
+				class="btn-transparent-header-dark"
+				[loading]="loader"
+				[label]="loader ? '' : 'Log In'"	
+			/>
+		</div>
+	</form>
+ </p-dialog>

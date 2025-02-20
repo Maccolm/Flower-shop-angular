@@ -16,7 +16,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 })
 export class HeaderComponent extends ClearObservable implements OnInit {
 	isAuthenticated: boolean = false;
-	username: string = ''
+	username: string = '';
 	menuItems = [
 		{
 			label: 'HOME',
@@ -48,18 +48,25 @@ export class HeaderComponent extends ClearObservable implements OnInit {
 			]
 		},
 	]
+	user:string = ''
 	constructor(private authService: AuthService, private confirmationService: ConfirmationService, private messageService: MessageService){
 		super();
 	}
 	ngOnInit(): void {
 		this.authService.isAuthenticated$.pipe(takeUntil(this.destroy$)).subscribe(isAuthenticated => {
 			this.isAuthenticated = isAuthenticated;
+			if (this.isAuthenticated) {
+				const token = localStorage.getItem('jwt_token')
+				if (token) {
+					const user = this.authService.decodeToken(token);
+					this.username = user.username;
+				} 
+			} else {
+				this.username = '';
+			}
 		})
-		
 	}
 	showForm() {
-		console.log('activated show form');
-		
 		this.authService.setFormVisible();
 	}
 	logOut(event: Event){	

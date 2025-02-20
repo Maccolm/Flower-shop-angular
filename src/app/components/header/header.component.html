@@ -6,7 +6,7 @@
 	</ng-template>
 	<ng-template #end>
 		<p-button
-			[label]="isAuthenticated ? 'Log Out({{username}})' : 'Log In'"
+			[label]="isAuthenticated ? 'Log Out ( '+ username +' )' : 'Log In'"
 			[icon]="isAuthenticated ? '' : 'pi pi-sign-in'"
 			(onClick)="isAuthenticated ? logOut($event) : showForm()"
 			class="btn-transparent-header"

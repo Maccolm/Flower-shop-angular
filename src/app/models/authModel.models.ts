@@ -1,7 +1,7 @@
 export interface AuthModel {
 	result: string | null,
 	token: string | null,
-	pagePermissions?: {
+	pagesPermissions?: {
 		users: {
 			create: boolean,
 			read: boolean,
